@@ -1,0 +1,60 @@
+@import "scss/exports";
+
+.wrapper {
+  @include containerMaxWidth(1250px);
+  margin-bottom: 155px;
+
+  @include tablet {
+    @include containerMaxWidth(580px);
+    margin-bottom: 50px;
+  }
+  @include phone {
+    @include containerMaxWidth(100%);
+  }
+
+  .header {
+    margin-bottom: 115px;
+    color: #112774;
+
+    @include tablet {
+      margin-bottom: 110px;
+    }
+    @include phone {
+      margin-bottom: 50px;
+    }
+
+    .h2 {
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 0.01em;
+      margin-bottom: 30px;
+
+      @include tablet {
+        margin-bottom: 16px;
+      }
+      @include phone {
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        font-size: 44px;
+        line-height: 131.2%;
+
+        @include tablet {
+        }
+        @include phone {
+          font-size: 24px;
+        }
+      }
+
+      h3 {
+        font-size: 28px;
+        line-height: 131.2%;
+
+        @include phone {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

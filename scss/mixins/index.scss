@@ -1,0 +1,67 @@
+@use "sass:math";
+@import "./devices";
+
+@mixin containerMaxWidth($maxWidth, $gutter: 24px) {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  max-width: calc($maxWidth + $gutter + $gutter);
+}
+
+@mixin fit($pos: absolute) {
+  position: $pos;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin clipLines($limit: 5) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $limit;
+  -webkit-box-orient: vertical;
+}
+
+@mixin container($perRow: 1, $xSpacing: 30px, $ySpacing: null) {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-left: math.div(-$xSpacing, 2);
+  margin-right: math.div(-$xSpacing, 2);
+  & > * {
+    padding-left: math.div($xSpacing, 2);
+    padding-right: math.div($xSpacing, 2);
+    width: math.div(100%, $perRow);
+    @if $ySpacing {
+      margin-bottom: $ySpacing;
+    } @else {
+      margin-bottom: $xSpacing;
+    }
+  }
+}
+
+@mixin placeholderColor($color) {
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $color;
+    opacity: 1; /* Firefox */
+  }
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $color;
+  }
+  &::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $color;
+  }
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

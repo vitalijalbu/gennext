@@ -1,0 +1,187 @@
+@import "scss/exports";
+
+.wrapper {
+  position: relative;
+  background-color: #939efe;
+  padding: 20px 0 12px;
+
+  @include tablet {
+    padding: 20px 0 25px;
+  }
+  @include phone {
+    padding: 12px 0 16px;
+  }
+
+  .anchor {
+    position: absolute;
+    top: -110px;
+    left: 0;
+
+    @include phone {
+      top: -60px;
+    }
+  }
+
+  .marquee {
+    & > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      text-transform: uppercase;
+
+      color: #ffffff;
+
+      opacity: 0.4;
+
+      margin: 0 15px;
+
+      user-select: none;
+
+      @include phone {
+        font-size: 10px;
+        line-height: 12px;
+        margin: 0 5px;
+      }
+    }
+  }
+
+  .formContainer {
+    width: 770px;
+    margin: 124px auto 52px;
+
+    @include tablet {
+      width: 352px;
+      margin: 37px auto 30px;
+    }
+    @include phone {
+      width: 100%;
+      padding: 0 24px;
+      margin: 28px 0 25px;
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      @include tablet {
+        flex-direction: column;
+      }
+
+      input,
+      textarea {
+        font-family: $Inter;
+        background: #ffffff;
+        border: none;
+        outline: none;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #112774;
+        padding: 16px 22px;
+        margin-bottom: 30px;
+        resize: none;
+
+        border: 3px solid transparent;
+        transition: 0.3s border-color;
+
+        @include placeholderColor(#5f6aca);
+
+        @include tablet {
+          margin-bottom: 16px;
+        }
+        @include phone {
+          font-size: 12px;
+          line-height: 15px;
+          margin-bottom: 24px;
+          padding: 12px 20px;
+          border: 1px;
+        }
+
+        &.error {
+          border-color: #99165d;
+        }
+      }
+
+      .leftCol {
+        width: 50%;
+        padding-right: 32px;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+          width: 100%;
+          padding-right: 0;
+        }
+      }
+
+      .rightCol {
+        width: 50%;
+        padding-left: 32px;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+          width: 100%;
+          padding-left: 0;
+        }
+
+        textarea {
+          flex: 1;
+
+          @include tablet {
+            height: 130px;
+            flex: unset;
+          }
+          @include phone {
+            height: 110px;
+          }
+        }
+      }
+
+      .submitBtn {
+        width: fit-content;
+        border: 3px solid #5f6aca;
+        outline: none;
+        background-color: #5f6aca;
+        border-radius: 30px;
+        padding: 16px 80px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: uppercase;
+
+        color: #ffffff;
+
+        transition: 0.3s color, 0.3s background-color, 0.3s opacity;
+
+        @include phone {
+          width: 100%;
+          font-size: 18px;
+          line-height: 22px;
+          padding: 22px 0;
+        }
+
+        &:hover {
+          background-color: #fff;
+          color: #5f6aca;
+        }
+
+        &.hasErrors,
+        &.isSubmitting {
+          pointer-events: none;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@import "scss/exports";
+
+.defaultLink {
+  width: fit-content;
+  @include flexCenter;
+  padding: 16px 22px;
+  background-color: #5f6aca;
+  border-radius: 30px;
+  border: 2px solid #5f6aca;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s color, 0.3s background-color;
+  white-space: nowrap;
+
+  &:hover {
+    color: #5f6aca;
+    background-color: #fff;
+  }
+}
+
+.styledLink {
+  background: transparent;
+  border-radius: 29px;
+  padding: 15px 25px;
+  border: 2px solid #c5c8e7;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120.7%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #6a75d5;
+  text-decoration: none;
+  transition: 0.3s background-color;
+
+  &:hover {
+    background-color: #c5c8e7;
+  }
+}
+
+.iconLink {
+  @include flexCenter;
+  width: 50px;
+  height: 50px;
+  background-color: #5f6aca;
+  border-radius: 50%;
+  border: 2px solid #5f6aca;
+  transition: 0.3s background-color;
+
+  &:has(.phone) {
+    &:hover {
+      background-color: #fff;
+
+      .phone {
+        path {
+          stroke: #5f6aca;
+        }
+      }
+    }
+  }
+
+  &:has(.logo) {
+    background-color: #fff;
+
+    &:hover {
+      background-color: #5f6aca;
+    }
+  }
+
+  &:has(.login) {
+    background-color: #fff;
+    border-color: #c5c8e7;
+
+    &:hover {
+      background-color: #c5c8e7;
+    }
+  }
+
+  .phone {
+    width: 21px;
+    height: 19px;
+
+    path {
+      transition: 0.3s stroke;
+    }
+  }
+
+  .logo {
+    width: 36px;
+    height: 28px;
+  }
+
+  .login {
+    width: 25px;
+    height: 28px;
+
+    path {
+      stroke: #5f6aca;
+    }
+  }
+}

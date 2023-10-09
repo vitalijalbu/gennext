@@ -1,0 +1,360 @@
+@import "scss/exports";
+
+.slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  @include tablet {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .leftCol {
+    position: relative;
+    width: 576px;
+    height: 406px;
+    margin-right: 28px;
+
+    @include tablet {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 26px;
+    }
+    @include phone {
+      height: 210px;
+      margin-bottom: 16px;
+    }
+
+    .imageContainer {
+      position: relative;
+      border-radius: 30px;
+      overflow: hidden;
+      transition: 1s transform, 1s filter;
+      background-color: #fff;
+      width: 352px;
+      height: 100%;
+
+      @include phone {
+        width: 210px;
+      }
+
+      &.active {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(75%, -50%) translate3d(0, 0, 0);
+        transform-origin: center;
+
+        z-index: 4;
+      }
+
+      &.next {
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%) translate3d(0, 0, 0) scale(0.9);
+        transform-origin: center;
+
+        filter: blur(4px);
+
+        z-index: 3;
+      }
+
+      &.secondNext {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(25%, -50%) translate3d(0, 0, 0) scale(0.8);
+        transform-origin: center;
+
+        filter: blur(8px);
+
+        z-index: 2;
+      }
+
+      &.thirdNext {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(0%, -50%) translate3d(0, 0, 0) scale(0.7);
+        transform-origin: center;
+
+        filter: blur(12px);
+
+        z-index: 1;
+      }
+    }
+  }
+
+  .phoneControls {
+    position: relative;
+    z-index: 2;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+
+    @include phone {
+      display: flex;
+    }
+
+    button {
+      @include flexCenter;
+      width: 41px;
+      height: 41px;
+      background: transparent;
+      outline: none;
+      border: 3px solid #c5c8e7;
+      border-radius: 50%;
+      transition: 0.3s border-color;
+      padding: 0;
+
+      svg {
+        width: 7px;
+        height: 13px;
+
+        path {
+          transition: 0.3s stroke;
+        }
+      }
+
+      &:hover {
+        border-color: #5f6aca;
+
+        svg {
+          path {
+            stroke: #5f6aca;
+          }
+        }
+      }
+
+      &.left {
+        margin-right: 10px;
+      }
+    }
+  }
+  .rightCol {
+    position: relative;
+    flex: 1;
+    border-radius: 30px;
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include tablet {
+      flex: none;
+      width: 100%;
+    }
+    @include phone {
+      padding: 28px 10px;
+    }
+
+    &::before {
+      border-radius: 30px;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        212.36deg,
+        rgba(147, 158, 254, 0.7) 4.3%,
+        rgba(243, 245, 255, 0.7) 45.13%
+      );
+      filter: blur(5px);
+    }
+
+    .fixedContainer {
+      width: 477px;
+      position: relative;
+      z-index: 2;
+
+      @include phone {
+        width: calc(100% - 48px);
+      }
+    }
+
+    .controls {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+
+      @include phone {
+        display: none;
+      }
+
+      button {
+        @include flexCenter;
+        width: 50px;
+        height: 50px;
+        background: transparent;
+        outline: none;
+        border: 3px solid #c5c8e7;
+        border-radius: 50%;
+        transition: 0.3s border-color;
+        padding: 0;
+
+        @include phone {
+        }
+
+        svg {
+          path {
+            transition: 0.3s stroke;
+          }
+        }
+
+        &:hover {
+          border-color: #5f6aca;
+
+          svg {
+            path {
+              stroke: #5f6aca;
+            }
+          }
+        }
+
+        &.left {
+          margin-right: 16px;
+
+          @include phone {
+          }
+        }
+      }
+    }
+  }
+}
+
+.item {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 1s opacity;
+  z-index: 1;
+  color: #000000;
+
+  &.active {
+    z-index: 2;
+    opacity: 1;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 0.01em;
+    margin-bottom: 26px;
+
+    @include phone {
+      font-size: 24px;
+      line-height: 29px;
+      margin-bottom: 22px;
+    }
+  }
+
+  .blockSnippet {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120.7%;
+    letter-spacing: 0.01em;
+
+    @include phone {
+      font-size: 16px;
+    }
+  }
+
+  .blockLink {
+    width: fit-content;
+    @include flexCenter;
+
+    background: #5f6aca;
+    border: 2px solid #5f6aca;
+    border-radius: 30px;
+    padding: 16px 22px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 24px;
+
+    transition: 0.3s color, 0.3s background-color;
+
+    @include phone {
+      width: 100%;
+    }
+
+    &:hover {
+      color: #5f6aca;
+      background-color: #fff;
+    }
+  }
+}
+
+.slider {
+  &.reverse {
+    flex-direction: row-reverse;
+
+    @include tablet {
+      flex-direction: column;
+    }
+
+    .leftCol {
+      margin-right: 0;
+      margin-left: 28px;
+
+      @include tablet {
+        margin-left: 0;
+      }
+
+      .imageContainer {
+        &.active {
+          right: unset;
+          left: 50%;
+          transform: translate(-75%, -50%) translate3d(0, 0, 0);
+        }
+
+        &.next {
+          right: unset;
+          left: 50%;
+          transform: translate(-50%, -50%) translate3d(0, 0, 0) scale(0.9);
+        }
+
+        &.secondNext {
+          right: unset;
+          left: 50%;
+          transform: translate(-25%, -50%) translate3d(0, 0, 0) scale(0.8);
+        }
+
+        &.thirdNext {
+          right: unset;
+          left: 50%;
+          transform: translate(0%, -50%) translate3d(0, 0, 0) scale(0.7);
+        }
+      }
+    }
+
+    .rightCol {
+      align-items: flex-end;
+      text-align: right;
+      &::before {
+        background: linear-gradient(
+          122.36deg,
+          rgba(147, 158, 254, 0.7) 4.3%,
+          rgba(243, 245, 255, 0.7) 45.13%
+        );
+      }
+    }
+  }
+}

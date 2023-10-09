@@ -1,0 +1,251 @@
+@import "scss/exports";
+
+.header {
+  width: 100%;
+  padding: 30px 0;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 100;
+
+  @include phone {
+    padding: 16px 0;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include containerMaxWidth(1250px);
+
+    @include tablet {
+      @include containerMaxWidth(629px);
+      justify-content: flex-start;
+    }
+
+    .logoContainer {
+      margin-right: 8px;
+
+      @include phone {
+        width: 100px;
+        height: 25px;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .mainLinks {
+      display: flex;
+      align-items: center;
+
+      @include tablet {
+        display: none;
+      }
+
+      a {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 32px;
+        color: #939ce9;
+        text-decoration: none;
+        transition: 0.3s color;
+        white-space: nowrap;
+        margin-right: 20px;
+
+        &:hover {
+          color: #5f6aca;
+        }
+
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
+    }
+
+    .secondaryLinks {
+      display: flex;
+      align-items: center;
+
+      @include tablet {
+        display: none;
+      }
+
+      a {
+        white-space: nowrap;
+        &:not(:last-child) {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    .tabletLinks {
+      display: none;
+      margin-left: auto;
+
+      @include tablet {
+        display: flex;
+      }
+
+      a {
+        @include phone {
+          width: 26px;
+          height: 26px;
+        }
+
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+
+        svg[class*="phone"] {
+          @include phone {
+            width: 11px;
+            height: 10px;
+          }
+        }
+
+        svg[class*="logo"] {
+          @include phone {
+            width: 18px;
+            height: 14px;
+          }
+        }
+
+        svg[class*="login"] {
+          @include phone {
+            width: 12px;
+            height: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.toggler {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  z-index: 2;
+  cursor: pointer;
+  margin-left: 20px;
+
+  @include flexCenter;
+  display: none;
+
+  @include tablet {
+    display: flex;
+  }
+  @include phone {
+    width: 24px;
+    height: 24px;
+    margin-left: 12px;
+  }
+
+  &:hover {
+    svg {
+      path {
+        stroke: #112774;
+      }
+    }
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s opacity;
+
+    path {
+      transition: 0.3s stroke;
+    }
+  }
+
+  .active {
+    opacity: 1;
+  }
+
+  .close {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.tabletMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #f1f3ff;
+  transition: 0.3s opacity;
+  opacity: 0;
+  pointer-events: none;
+  padding: 16px 0 35px;
+
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+
+  &.active {
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  .tabletSecLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+
+    a {
+      font-size: 20px;
+      line-height: 24px;
+      background-color: #fff;
+      color: #939ce9;
+      border: none;
+      transition: 0.3s color, 0.3s background-color;
+
+      &:not(:last-child) {
+        margin-bottom: 14px;
+      }
+
+      &:hover {
+        background-color: #112774;
+        color: #fff;
+      }
+    }
+  }
+
+  .tabletMainLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      width: fit-content;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #939ce9;
+      transition: 0.3s color;
+
+      &:not(:last-child) {
+        margin-bottom: 34px;
+      }
+
+      &:hover {
+        color: #5f6aca;
+      }
+    }
+  }
+}

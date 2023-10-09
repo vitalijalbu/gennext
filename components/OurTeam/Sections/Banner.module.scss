@@ -1,0 +1,66 @@
+@import "scss/exports";
+
+.wrapper {
+  padding: 90px 0 90px;
+  text-align: center;
+  color: #112774;
+
+  @include tablet {
+    padding: 60px 0 100px;
+  }
+  @include phone {
+    padding: 30px 0 40px;
+  }
+
+  .container {
+    @include containerMaxWidth(980px);
+
+    @include tablet {
+      @include containerMaxWidth(635px);
+    }
+    @include phone {
+      @include containerMaxWidth(100%);
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: 44px;
+      line-height: 131.2%;
+      letter-spacing: 0.01em;
+      color: #939ce9;
+      margin-bottom: 24px;
+
+      @include tablet {
+        font-size: 32px;
+      }
+      @include phone {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .snippet {
+      font-weight: 800;
+      font-size: 28px;
+      line-height: 131.2%;
+      letter-spacing: 0.01em;
+      color: #112774;
+
+      @include tablet {
+        font-weight: 700;
+        font-size: 24px;
+      }
+      @include phone {
+        font-size: 15px;
+      }
+
+      p:not(:last-child) {
+        margin-bottom: 24px;
+
+        @include phone {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}

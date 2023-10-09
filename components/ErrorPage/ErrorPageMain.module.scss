@@ -1,0 +1,65 @@
+@import "scss/exports";
+
+.wrapper {
+  text-align: center;
+  color: #939efe;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+
+    @include tablet {
+      @include containerMaxWidth(629px);
+      padding: 60px 0;
+    }
+    @include phone {
+      @include containerMaxWidth(100%);
+    }
+
+    .content {
+      padding: 80px 240px;
+      background: linear-gradient(
+        122.36deg,
+        rgba(147, 158, 254, 0.7) 4.3%,
+        rgba(243, 245, 255, 0.7) 45.13%
+      );
+      border-radius: 30px;
+
+      @include tablet {
+        width: 100%;
+        padding: 45px 0;
+      }
+      @include phone {
+        padding: 30px 0;
+      }
+
+      h1 {
+        font-weight: 900;
+        font-size: 200px;
+        line-height: 242px;
+
+        @include tablet {
+          font-size: 150px;
+          line-height: 160px;
+        }
+        @include phone {
+          font-size: 100px;
+          line-height: 110px;
+        }
+      }
+
+      .snippet {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 131.2%;
+        letter-spacing: 0.01em;
+
+        @include phone {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}

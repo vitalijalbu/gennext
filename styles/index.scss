@@ -1,0 +1,22 @@
+@import "./reset";
+@import "./nprogress.scss";
+@import "scss/exports";
+
+html {
+  font-family: $Inter;
+}
+img{
+  width: 100%;
+  height: auto;
+}
+button {
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+.grecaptcha-badge {
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+}

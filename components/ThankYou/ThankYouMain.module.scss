@@ -1,0 +1,101 @@
+@import "scss/exports";
+
+.wrapper {
+  text-align: center;
+  color: #939efe;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+
+    @include tablet {
+      @include containerMaxWidth(629px);
+      padding: 60px 0;
+    }
+    @include phone {
+      @include containerMaxWidth(100%);
+    }
+
+    .content {
+      padding: 80px 140px;
+      background: linear-gradient(
+        122.36deg,
+        rgba(147, 158, 254, 0.7) 4.3%,
+        rgba(243, 245, 255, 0.7) 45.13%
+      );
+      border-radius: 30px;
+
+      @include tablet {
+        width: 100%;
+        padding: 45px 30px;
+      }
+      @include phone {
+        padding: 30px 24px;
+      }
+
+      h1 {
+        font-weight: 900;
+        font-size: 96px;
+        line-height: 116px;
+        text-align: center;
+        text-transform: uppercase;
+
+        @include tablet {
+          font-size: 70px;
+          line-height: 90px;
+        }
+        @include phone {
+          font-size: 50px;
+          line-height: 70px;
+        }
+      }
+
+      .snippet {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 131.2%;
+        letter-spacing: 0.01em;
+        color: #112774;
+
+        @include tablet {
+          font-size: 22px;
+        }
+        @include phone {
+          font-size: 18px;
+        }
+      }
+
+      .link {
+        width: fit-content;
+        @include flexCenter;
+        padding: 16px 22px;
+        background-color: #5f6aca;
+        border-radius: 30px;
+        border: 2px solid #5f6aca;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 0.01em;
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.3s color, 0.3s background-color;
+        margin: 40px auto 0;
+
+        @include tablet {
+          margin-top: 32px;
+        }
+        @include phone {
+          margin-top: 24px;
+        }
+
+        &:hover {
+          color: #5f6aca;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}

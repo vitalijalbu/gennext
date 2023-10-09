@@ -1,0 +1,21 @@
+@mixin desktop {
+  @media (max-width: $wideBreak) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $desktopBreak) {
+    // https://www.ios-resolution.com/
+    // it appears that the widest ipad 1024 and also is small ipad widescreen mode
+    @content;
+  }
+}
+
+@mixin phone {
+  // https://worship.agency/mobile-screen-sizes-for-2021
+  // 19% of phones in 2021 have 414px wide
+  @media (max-width: $tabletBreak) {
+    @content;
+  }
+}

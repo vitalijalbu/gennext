@@ -1,0 +1,134 @@
+@import "scss/exports";
+
+.footer {
+  position: relative;
+  z-index: 99;
+  width: 100%;
+  padding: 84px 0 32px;
+  background-color: #112774;
+  color: #fff;
+
+  @include tablet {
+    text-align: center;
+    padding: 50px 0 24px;
+  }
+  @include phone {
+    padding: 40px 0 12px;
+  }
+
+  .container {
+    width: 835px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include tablet {
+      width: 460px;
+    }
+    @include phone {
+      width: 100%;
+      padding: 0 24px;
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      margin-bottom: 72px;
+
+      @include tablet {
+        margin-bottom: 60px;
+      }
+      @include phone {
+        margin-bottom: 26px;
+      }
+
+      a {
+        @include flexCenter;
+
+        width: 72px;
+        height: 72px;
+
+        @include phone {
+          width: 42px;
+          height: 42px;
+        }
+
+        &:not(:first-child) {
+          margin-left: 40px;
+
+          @include phone {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+
+    .nmls {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      margin-bottom: 24px;
+
+      a {
+        color: #fff;
+      }
+
+      @include phone {
+        font-size: 10px;
+        line-height: 14px;
+        margin-bottom: 12px;
+      }
+    }
+
+    .copyright {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      margin-bottom: 20px;
+
+      @include tablet {
+        margin-bottom: 32px;
+      }
+      @include phone {
+        font-size: 8px;
+        line-height: 10px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .logoContainer {
+      display: block;
+      margin-bottom: 20px;
+
+      @include tablet {
+        margin-bottom: 26px;
+      }
+      @include phone {
+        width: 27px;
+        height: 27px;
+        margin-bottom: 12px;
+
+        svg {
+          width: 27px;
+          height: 27px;
+        }
+      }
+    }
+
+    .created {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+
+      a {
+        color: #fff;
+      }
+
+      @include phone {
+        font-size: 8px;
+        line-height: 10px;
+      }
+    }
+  }
+}

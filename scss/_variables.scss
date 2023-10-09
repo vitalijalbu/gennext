@@ -1,0 +1,11 @@
+$Inter: "Inter", sans-serif;
+
+$wideBreak: 1310px;
+$desktopBreak: 1192px;
+$tabletBreak: 559px;
+
+:export {
+  wideBreak: $wideBreak;
+  desktopBreak: $desktopBreak;
+  tabletBreak: $tabletBreak;
+}

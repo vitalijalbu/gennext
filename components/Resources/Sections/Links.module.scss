@@ -1,0 +1,197 @@
+@import "scss/exports";
+
+.wrapper {
+  margin-bottom: 60px;
+
+  @include phone {
+    margin-bottom: 70px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    @include tablet {
+      @include containerMaxWidth(635px);
+    }
+    @include phone {
+      @include containerMaxWidth(100%);
+    }
+
+    .leftCol {
+      width: 74px;
+      margin-right: 45px;
+      position: relative;
+      z-index: 2;
+
+      @include tablet {
+        margin-right: 32px;
+      }
+      @include phone {
+        width: 40px;
+        margin-right: 24px;
+      }
+
+      .animatedItems {
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        right: 0;
+      }
+      .text {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #939ce9;
+        white-space: nowrap;
+        margin-right: 20px;
+
+        @include tablet {
+          display: none;
+        }
+      }
+
+      .circle {
+        @include flexCenter;
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+        background-color: #f3f5f9;
+        border: 1px solid #939ce9;
+        padding: 6px;
+
+        @include phone {
+          width: 40px;
+          height: 40px;
+          padding: 3px;
+
+          svg {
+            width: 11px;
+            height: 10px;
+          }
+        }
+
+        & > div {
+          @include flexCenter;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          padding: 10px;
+          background-color: #939ce9;
+
+          @include phone {
+            padding: 5px;
+          }
+
+          & > div {
+            @include flexCenter;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #112774;
+          }
+        }
+      }
+
+      .line {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 100%;
+        background-color: #5f6aca46;
+        border-radius: 10px;
+
+        .filler {
+          width: 6px;
+          background-color: #5f6aca;
+          position: absolute;
+          left: 50%;
+          top: 0;
+          transform: translateX(-50%);
+          border-radius: 10px;
+        }
+
+        .highlight {
+          width: 9px;
+          opacity: 0.4;
+          background-color: #5f6aca;
+          filter: blur(2px);
+          position: absolute;
+          left: 50%;
+          top: 0;
+          transform: translateX(-50%);
+          border-radius: 10px;
+        }
+      }
+    }
+
+    .rightCol {
+      width: 510px;
+
+      @include tablet {
+        width: auto;
+        flex: 1;
+      }
+
+      .item {
+        &:not(:last-child) {
+          margin-bottom: 100px;
+
+          @include phone {
+            margin-bottom: 54px;
+          }
+        }
+
+        h3 {
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 29px;
+          color: #112774;
+          margin-bottom: 20px;
+
+          @include phone {
+            font-size: 14px;
+            line-height: 17px;
+            margin-bottom: 12px;
+          }
+        }
+
+        .linksContainer {
+          a {
+            display: block;
+            word-break: break-all;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 29px;
+            color: #939ce9;
+            transition: 0.3s color;
+
+            @include phone {
+              font-size: 12px;
+              line-height: 15px;
+            }
+
+            &:hover {
+              color: #112774;
+            }
+
+            &:not(:last-child) {
+              margin-bottom: 20px;
+
+              @include phone {
+                margin-bottom: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

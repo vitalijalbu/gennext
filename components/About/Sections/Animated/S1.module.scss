@@ -1,0 +1,351 @@
+@import "scss/exports";
+
+.wrapper {
+  .firsBlock {
+    width: 100%;
+    @include containerMaxWidth(1250px);
+
+    @include tablet {
+      @include containerMaxWidth(630px);
+      text-align: center;
+      @include flexCenter;
+      flex-direction: column;
+    }
+    @include phone {
+    }
+  }
+
+  h1 {
+    width: 500px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 131.2%;
+    letter-spacing: 0.01em;
+    color: #949fff;
+    margin-bottom: 14px;
+
+    @include tablet {
+      font-size: 24px;
+    }
+    @include phone {
+      width: calc(100% - 48px);
+    }
+  }
+
+  .snippet {
+    width: 500px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 131.2%;
+    letter-spacing: 0.01em;
+    color: #112774;
+
+    @include tablet {
+      font-size: 16px;
+    }
+    @include phone {
+      width: calc(100% - 48px);
+    }
+
+    em {
+      color: #949fff;
+      font-style: normal;
+    }
+
+    p:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  .svg {
+    @include flexCenter;
+    width: 140px;
+    height: 140px;
+    background: #ffffff;
+    box-shadow: 0px 10px 23px rgba(234, 239, 254, 0.78);
+    border-radius: 50%;
+    z-index: 50;
+
+    svg {
+      width: 80px;
+      height: 70px;
+
+      path {
+        stroke: #112774;
+      }
+    }
+  }
+
+  .circle1 {
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(
+      180deg,
+      #949fff 0%,
+      rgba(148, 159, 255, 0) 100%
+    );
+    opacity: 0.2;
+    border-radius: 50%;
+  }
+
+  .circle2 {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(
+      180deg,
+      #949fff 0%,
+      rgba(148, 159, 255, 0) 100%
+    );
+    opacity: 0.4;
+    border-radius: 50%;
+  }
+
+  .circle3 {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(
+      180deg,
+      #949fff 0%,
+      rgba(148, 159, 255, 0) 100%
+    );
+    opacity: 0.6;
+    border-radius: 50%;
+  }
+
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .image {
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &.image0 {
+      width: 100px;
+      height: 100px;
+      left: 60%;
+      top: 30%;
+
+      @include tablet {
+        width: 80px;
+        height: 80px;
+        top: 35%;
+      }
+      @include phone {
+        width: 60px;
+        height: 60px;
+        top: 30%;
+      }
+    }
+    &.image1 {
+      width: 70px;
+      height: 70px;
+      left: 30%;
+      top: 30%;
+
+      @include tablet {
+        width: 50px;
+        height: 50px;
+      }
+      @include phone {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    &.image2 {
+      width: 110px;
+      height: 110px;
+      left: 20%;
+      top: 65%;
+
+      @include tablet {
+        width: 90px;
+        height: 90px;
+        left: 10%;
+        top: 55%;
+      }
+      @include phone {
+        width: 70px;
+        height: 70px;
+      }
+    }
+    &.image3 {
+      width: 90px;
+      height: 90px;
+      left: 65%;
+      top: 60%;
+
+      @include tablet {
+        width: 70px;
+        height: 70px;
+        left: 70%;
+        top: 65%;
+      }
+      @include phone {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    &.image4 {
+      width: 65px;
+      height: 65px;
+      left: 45%;
+      top: 15%;
+
+      @include tablet {
+        width: 45px;
+        height: 45px;
+        left: 55%;
+        top: 20%;
+      }
+      @include phone {
+        width: 35px;
+        height: 35px;
+      }
+    }
+    &.image5 {
+      width: 90px;
+      height: 90px;
+      left: 50%;
+      top: 75%;
+
+      @include tablet {
+        width: 70px;
+        height: 70px;
+        left: 40%;
+        top: 70%;
+      }
+      @include phone {
+        width: 50px;
+        height: 50px;
+        left: 35%;
+      }
+    }
+    &.image6 {
+      width: 120px;
+      height: 120px;
+      left: 75%;
+      top: 30%;
+
+      @include tablet {
+        width: 100px;
+        height: 100px;
+        left: 75%;
+        top: 45%;
+      }
+      @include phone {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+
+  .lastSection {
+    width: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+
+    @include tablet {
+      width: 630px;
+    }
+    @include phone {
+      width: 100%;
+    }
+
+    h1 {
+      width: auto;
+    }
+
+    .snippet {
+      width: 800px;
+      margin-bottom: 40px;
+
+      @include tablet {
+        width: calc(100% - 48px);
+      }
+    }
+
+    .block {
+      position: absolute;
+      padding: 20px 30px;
+      background: #f1f3ff;
+      border-radius: 29.5px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #939efe;
+      white-space: nowrap;
+
+      @include tablet {
+        font-size: 12px;
+        padding: 10px 15px;
+      }
+
+      &.block0 {
+        left: 20px;
+        top: -100px;
+
+        @include tablet {
+          left: 24px;
+          top: -60px;
+        }
+      }
+      &.block1 {
+        right: 20px;
+        top: -100px;
+
+        @include tablet {
+          right: 24px;
+          top: -60px;
+        }
+      }
+      &.block2 {
+        left: -60px;
+        bottom: -80px;
+
+        @include tablet {
+          left: 12px;
+          bottom: -40px;
+        }
+        @include phone {
+          bottom: -60px;
+        }
+      }
+      &.block3 {
+        width: fit-content;
+        left: 0;
+        right: 0;
+        bottom: -140px;
+        margin: 0 auto;
+
+        @include tablet {
+          bottom: -80px;
+        }
+        @include phone {
+          bottom: -120px;
+        }
+      }
+      &.block4 {
+        right: -60px;
+        bottom: -80px;
+
+        @include tablet {
+          right: 12px;
+          bottom: -40px;
+        }
+        @include phone {
+          bottom: -60px;
+        }
+      }
+    }
+  }
+}

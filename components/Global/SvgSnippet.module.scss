@@ -1,0 +1,30 @@
+@import "scss/exports";
+
+.mainBlock {
+  padding: 32px 290px 32px;
+  box-shadow: 0px 10px 23px rgba(234, 239, 254, 0.78);
+  border-radius: 60px;
+
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  color: #112774;
+  text-align: center;
+
+  margin-bottom: 100px;
+
+  @include tablet {
+    padding: 28px 24px 28px;
+
+    margin-bottom: 75px;
+  }
+  @include phone {
+    padding: 24px 38px 24px;
+
+    font-size: 16px;
+    line-height: 19px;
+
+    margin-bottom: 45px;
+  }
+}
